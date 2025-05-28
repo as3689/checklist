@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>나주 체크리스트</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="ico/logo.ico" />
+</head>
+<body>
+  <header>
+    <div class="header-left"></div>
+    <div class="header-center">나주 일일 체크리스트</div>
+    <div class="header-right">
+      <span id="user-info">user1</span>
+      <span id="timestamp">2025. 5. 28. 오후 4:48</span>
+      <button id="logout">로그아웃</button>
+    </div>
+  </header>
+
+  <div class="dong-buttons-container">
+    <div class="dong-buttons"></div>
+  </div>
+
+  <div class="date-selector">
+    <label for="date-picker">날짜 선택: </label>
+    <input type="date" id="date-picker" />
+  </div>
+
+  <div class="checklist-controls">
+    <button id="add-item">항목 추가</button>
+    <button id="delete-item">항목 삭제</button>
+    <button id="save-checklist" style="margin-left: auto;">저장</button>
+  </div>
+
+  <main class="checklist-container">
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th>확인사항</th>
+          <th>결과</th>
+          <th class="confirmer">확인자</th>
+        </tr>
+      </thead>
+      <tbody id="checklist">
+        <!-- JS로 항목 추가됨 -->
+      </tbody>
+    </table>
+  </main>
+
+  <div class="checklist-logo-wrapper">
+    <img src="./ico/logo.png" alt="Logo" class="checklist-logo" />
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* ----------------------- 공통 리셋 ----------------------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  
+}
+
+/* ----------------------- 헤더 ----------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #2c3e50;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.header-left img.logo {
+  height: 40px;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9rem;
+}
+
+.header-right span {
+  margin-bottom: 4px;
+}
+
+.header-right button,
+#logout {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header-right button:hover,
+#logout:hover {
+  background-color: #c0392b;
+}
+
+/* ----------------------- 동 버튼 스타일 ----------------------- */
+.dong-buttons-container {
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.dong-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dong-button {
+  padding: 8px 16px;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.dong-button:hover {
+  background-color: #465c71;
+}
+
+.dong-button.active {
+  background-color: #007bff;
+}
+
+.dong-button.active:hover {
+  background-color: #0056b3;
+}
+
+/* ----------------------- 날짜 선택 UI ----------------------- */
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.date-selector label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.date-selector input[type="date"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* ----------------------- 체크리스트 컨트롤 버튼 ----------------------- */
+.checklist-controls {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.checklist-controls button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.checklist-controls button:hover {
+  background-color: #0056b3;
+}
+
+/* ----------------------- 체크리스트 테이블 ----------------------- */
+.checklist-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.checklist-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 1rem;
+}
+
+.checklist-table th,
+.checklist-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.checklist-table th {
+  background-color: #ecf0f1;
+  font-weight: 600;
+}
+
+.checklist-table td:first-child {
+  text-align: left; /* 확인사항 열 왼쪽 정렬 */
+}
+
+/* 행 Hover 효과 */
+.checklist-table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* ----------------------- 로그인 화면 ----------------------- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #007bff;
+}
+
+.login-box .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.login-box .form-group label {
+  display: inline-block; /* 레이블을 인라인으로 변경 */
+  width: 80px; /* 레이블 너비 고정 */
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.login-box .form-group input {
+  display: inline-block; /* 입력창을 인라인으로 변경 */
+  width: calc(100% - 90px); /* 레이블 너비를 고려한 남은 공간 */
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+}
+
+#login-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* ----------------------- 로고 스타일 ----------------------- */
+.login-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.login-logo {
+  width: 100px;
+  height: auto;
+}
+
+.checklist-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.checklist-logo {
+  height: 30px;
+  opacity: 0.7;
+}
+
+/* ----------------------- 반응형 ----------------------- */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+
+  .header-right {
+    align-items: center;
+  }
+
+  .login-box .form-group {
+    text-align: center; /* 모바일에서 중앙 정렬 */
+  }
+
+  .login-box .form-group label {
+    display: block; /* 레이블을 블록으로 변경 */
+    width: 100%; /* 전체 너비 사용 */
+    margin-bottom: 5px; /* 레이블과 입력창 간격 */
+  }
+
+  .login-box .form-group input {
+    display: block; /* 입력창을 블록으로 변경 */
+    width: 100%; /* 전체 너비 사용 */
+    margin-bottom: 15px; /* 입력창 간격 */
+  }
+
+  .checklist-table {
+    font-size: 0.9rem;
+  }
+
+  .checklist-table th.confirmer {
+    font-size: 0.8rem;
+  }
+
+  .checklist-table td:nth-child(3) {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-box h1 {
+    font-size: 20px;
+  }
+
+  .login-box input,
+  .login-box button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .checklist-table {
+    font-size: 0.8rem;
+  }
+
+  .checklist-table th.confirmer {
+    font-size: 0.7rem;
+  }
+
+  .checklist-table td:nth-child(3) {
+    font-size: 0.7rem;
+  }
+}
