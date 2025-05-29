@@ -264,6 +264,13 @@ header {
   height: auto;
 }
 
+
+.login-logo1 {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 .checklist-logo-wrapper {
   display: flex;
   justify-content: center;
