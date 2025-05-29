@@ -24,29 +24,6 @@ db.connect((err) => {
   console.log("MariaDB 연결 성공");
 });
 
-// 테이블 생성
-db.query(`
-  CREATE TABLE IF NOT EXISTS checklist (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    item VARCHAR(255) NOT NULL
-  )
-`, (err) => {
-  if (err) {
-    console.error("checklist 테이블 생성 실패:", err);
-    return;
-  }
-  console.log("checklist 테이블 생성/확인 완료");
-
-  // 초기 데이터 삽입
-  db.query("SELECT COUNT(*) as count FROM checklist", (err, rows) => {
-    if (err) throw err;
-    if (rows[0].count === 0) {
-      db.query("INSERT INTO checklist (item) VALUES ('양액 A 확인'), ('양액 B 확인'), ('배관 누수 여부'), ('전원 이상 여부')");
-      console.log("초기 체크리스트 항목 삽입 완료");
-    }
-  });
-});
-
 db.query(`
   CREATE TABLE IF NOT EXISTS checklist_history (
     history_id INT AUTO_INCREMENT PRIMARY KEY,
