@@ -24,24 +24,6 @@ db.connect((err) => {
   console.log("MariaDB 연결 성공");
 });
 
-db.query(`
-  CREATE TABLE IF NOT EXISTS checklist_history (
-    history_id INT AUTO_INCREMENT PRIMARY KEY,
-    dong VARCHAR(10) NOT NULL,
-    checklist_id INT NOT NULL,
-    checked TINYINT NOT NULL DEFAULT 0,
-    user VARCHAR(50),
-    timestamp VARCHAR(50),
-    FOREIGN KEY (checklist_id) REFERENCES checklist(id) ON DELETE CASCADE
-  )
-`, (err) => {
-  if (err) {
-    console.error("checklist_history 테이블 생성 실패:", err);
-    return;
-  }
-  console.log("checklist_history 테이블 생성/확인 완료");
-});
-
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
